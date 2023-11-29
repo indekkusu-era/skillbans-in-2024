@@ -7,7 +7,7 @@ def grad(xi, xj, pij):
     return diff
 
 def elo(data, x0, gamma=0.9995, eps=1e-2):
-    max_iterations = int(np.ceil(np.log(eps) / np.log(gamma))) # proof: upper bound elo by geometric series
+    max_iterations = int(np.ceil(np.log(eps * (1 - gamma)) / np.log(gamma))) # proof: upper bound elo by geometric series
     print(f"{max_iterations = }")
     n_games = np.zeros(len(x0))
     multipiler = np.ones(len(x0))
