@@ -2,7 +2,7 @@ import pandas as pd
 import mysql.connector as connector
 
 def read_query(query):
-    cnx = connector.connect(user='root',
+    cnx = connector.connect(user='root', password='admin',
                               host='127.0.0.1',
                               database='osu')
     return pd.read_sql(query, cnx)
